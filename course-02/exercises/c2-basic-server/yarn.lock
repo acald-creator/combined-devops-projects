@@ -5,6 +5,86 @@ __metadata:
   version: 4
   cacheKey: 7
 
+"@types/body-parser@npm:*":
+  version: 1.19.0
+  resolution: "@types/body-parser@npm:1.19.0"
+  dependencies:
+    "@types/connect": "*"
+    "@types/node": "*"
+  checksum: 4576f3fde5980c1219cadbc7c523bdb1cefc3713300e18bf47ff37bb9b8176342a1dc7519008311fd8fc11413cf188a83931b9b59051aa1c2f095c1e10459369
+  languageName: node
+  linkType: hard
+
+"@types/connect@npm:*":
+  version: 3.4.34
+  resolution: "@types/connect@npm:3.4.34"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6f712a0408ed119a42037bcbc38c12e053d3ffe11337221a3966c9e29a21c8455e331fe2116c426361c0b2c0e44cb3fb1f83594326e42ba34ce4723d726b7d30
+  languageName: node
+  linkType: hard
+
+"@types/express-serve-static-core@npm:*":
+  version: 4.17.16
+  resolution: "@types/express-serve-static-core@npm:4.17.16"
+  dependencies:
+    "@types/node": "*"
+    "@types/qs": "*"
+    "@types/range-parser": "*"
+  checksum: 5ef34862a73432ecc98cc6bdd1ae548951679b812acbb967e248cdda8f13803f20947987a5318639c4e6320484c53eaf65bf94a3ceabeb70c51295a0561b221f
+  languageName: node
+  linkType: hard
+
+"@types/express@npm:^4.17.9":
+  version: 4.17.9
+  resolution: "@types/express@npm:4.17.9"
+  dependencies:
+    "@types/body-parser": "*"
+    "@types/express-serve-static-core": "*"
+    "@types/qs": "*"
+    "@types/serve-static": "*"
+  checksum: 80cd74784e9b40495b683b6b285be58bd7515f3b86923a72483fb8a6dec15ef159e651c460a215e9ad4e9620deec7345020fe33535c4eb12d81152b74b0278d0
+  languageName: node
+  linkType: hard
+
+"@types/mime@npm:*":
+  version: 2.0.3
+  resolution: "@types/mime@npm:2.0.3"
+  checksum: 6df548a912494f8579d548cd883be0425f30eaa2922283335c405e270600f49045a06d766460c0f0edabb41dff570c614d174d3c52215de3bddd11f190ec9ae9
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:*, @types/node@npm:^14.14.13":
+  version: 14.14.13
+  resolution: "@types/node@npm:14.14.13"
+  checksum: a879dae2e047e75055b0f4fb217aac31e905e49f921054f6425e8494e7a75dec82d351770b1a0e79a00322345896646a4dadc5fa27c857e392d6909e54cdba9e
+  languageName: node
+  linkType: hard
+
+"@types/qs@npm:*":
+  version: 6.9.5
+  resolution: "@types/qs@npm:6.9.5"
+  checksum: afe4721a802a4b5fa874a7d6d9fd33c9e812bb0ef90dabb050e8072be4ab2e5e817c0feacb9b4e0771d875de99f4d9738217976aeb8d36b81ccd82ded5e9fdc0
+  languageName: node
+  linkType: hard
+
+"@types/range-parser@npm:*":
+  version: 1.2.3
+  resolution: "@types/range-parser@npm:1.2.3"
+  checksum: 092fabae0ecbd728d3e4debc938cd043e97cb9f210cfec1c56ff6065c6e91666f376eb586591825d6757a058fd1a1dc4831d34e04ecfbb0800f35b8d86d38635
+  languageName: node
+  linkType: hard
+
+"@types/serve-static@npm:*":
+  version: 1.13.8
+  resolution: "@types/serve-static@npm:1.13.8"
+  dependencies:
+    "@types/mime": "*"
+    "@types/node": "*"
+  checksum: 39db4c0f0f1c459588609496f92c2cb084b7feca8b9f96ac5032e371f8a0f4923c32dc9b7fd005b8bb6d10aad5d9118238da4869647672441571ff20bcbe4ea4
+  languageName: node
+  linkType: hard
+
 "@types/strip-bom@npm:^3.0.0":
   version: 3.0.0
   resolution: "@types/strip-bom@npm:3.0.0"
@@ -225,6 +305,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "c2-basic-server@workspace:."
   dependencies:
+    "@types/express": ^4.17.9
+    "@types/node": ^14.14.13
     express: ^4.17.1
     ts-node: ^9.1.1
     ts-node-dev: ^1.1.1
