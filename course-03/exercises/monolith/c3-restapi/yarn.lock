@@ -418,6 +418,7 @@ __metadata:
     aws-sdk: ^2.810.0
     bcrypt: ^5.0.0
     body-parser: ^1.19.0
+    email-validator: ^2.0.4
     express: ^4.17.1
     jsonwebtoken: ^8.5.1
     pg: ^8.5.1
@@ -728,6 +729,13 @@ __metadata:
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
   checksum: ba74f91398e3ee3b6d665b2f0d13ad6530e89a7e64ec886a6eec0602fb8a5a274652960e21bd5d4b42fdeb9017d873ff872f50342d38779e955285977edb337c
+  languageName: node
+  linkType: hard
+
+"email-validator@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "email-validator@npm:2.0.4"
+  checksum: 1c09deb77a45959e561465b56e84bee8fda97a81427ca0492aaa0d4205650634a66283f3dd00194cc65f54005b8fe2c88185d8d57e6f2f9d88372d6787e469fd
   languageName: node
   linkType: hard
 
