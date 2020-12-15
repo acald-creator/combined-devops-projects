@@ -4,8 +4,9 @@ import bodyParser from 'body-parser'
 const app = express()
 const port = 8082
 
-app.use(bodyParser.json())
 
+app.use(bodyParser.json())
+/* Get main page that says Welcome to the Cloud */
 app.get('/', async(req: Request, res: Response) => {
     res.send("Welcome to the Cloud!")
 })
