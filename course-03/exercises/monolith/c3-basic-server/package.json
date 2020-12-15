@@ -1,5 +1,14 @@
 {
   "name": "c3-basic-server",
+  "version": "0.0.1",
+  "description": "Basic REST API in Express",
+  "repository": {
+    "url": "https://github.com/acaldwell-pixel/aws-cloud-developer-projects.git"
+  },
+  "author": {
+    "name": "Antonette Caldwell",
+    "email": "acaldwell-pixel@hotmail.com"
+  },
   "scripts": {
     "dev": "ts-node-dev ./src/server.ts",
     "test": "mocha -r ts-node/register src/**/*.tests.ts"
