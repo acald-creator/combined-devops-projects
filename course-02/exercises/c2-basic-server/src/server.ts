@@ -33,16 +33,17 @@ app.get('/persons/', (req: Request, res: Response) => {
 })
 
 /* Post a greeting to the specific person
-*
+* curl -X POST -H "Content-Type: application/json" \
+* -d '{"name": "{name}"}'
 */
 app.post('/persons', async(req: Request, res: Response) => {
-    let { name } = req.query
+    let { name } = req.body
     if (!name) {
         return res.status(400).send(`Name is required`)
     }
     return res.status(200).send(`Welcome to the cloud, ${name}!`)
 })
-
+/* Start the server */
 app.listen(port, () => {
     console.log(`server running http://localhost:${port}`)
     console.log(`press CTRL+C to stop server`)
