@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: ["error", { "args": "none" }] */
 import { Router, Request, Response } from 'express';
 
 import { User } from '../models/Users';
@@ -7,9 +8,7 @@ const router: Router = Router();
 
 router.use('/auth', AuthRouter);
 
-router.get('/', async (req: Request, res: Response) => {
-
-});
+router.get('/', async (req: Request, res: Response) => { });
 
 router.get('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
@@ -17,4 +16,7 @@ router.get('/:id', async (req: Request, res: Response) => {
   res.send(item);
 });
 
-export const UserRouter: Router = router;
+// export const UserRouter: Router = router;
+
+const UserRouter: Router = router;
+export { UserRouter as default };
