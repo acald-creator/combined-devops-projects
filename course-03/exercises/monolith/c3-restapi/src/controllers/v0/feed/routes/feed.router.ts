@@ -4,7 +4,7 @@ import { requireAuth } from '../../users/routes/auth.router';
 import * as AWS from '../../../../aws';
 
 const router: Router = Router();
-
+/* Retrieve all feed items */
 router.get('/', async (req: Request, res: Response) => {
     const items = await FeedItem.findAndCountAll({ order: [['id', 'DESC']] });
     items.rows.map((item) => {
@@ -14,14 +14,19 @@ router.get('/', async (req: Request, res: Response) => {
     });
     res.send(items);
 });
-
+/* Retrieve a specific item */
+router.get('/:id', async (req: Request, res: Response) => {
+    let { id } = req.params
+    const item = await FeedItem.findByPk(id)
+    res.send(item)
+})
+/* Update a specific item */
 router.patch('/:id',
     requireAuth,
     async (req: Request, res: Response) => {
-        res.send(500).send("not implemented")
+        res.send(500).send("Not implemented")
     });
-
-
+/* Get a signed url to put a new item into the S3 bucket */
 router.get('/signed-url/:fileName',
     requireAuth,
     async (req: Request, res: Response) => {
@@ -35,11 +40,11 @@ router.post('/',
     async (req: Request, res: Response) => {
         const caption = req.body.caption;
         const fileName = req.body.url;
-
+        /* Check if the caption is valid */
         if (!caption) {
             return res.status(400).send({ message: 'Caption is required or malformed' });
         }
-
+        /* Check if the filename is valid */
         if (!fileName) {
             return res.status(400).send({ message: 'File url is required' });
         }
@@ -49,10 +54,10 @@ router.post('/',
             url: fileName
         });
 
-        const saved_item = await item.save();
+        const savedItem = await item.save();
 
-        saved_item.url = AWS.getGetSignedUrl(saved_item.url);
-        res.status(201).send(saved_item);
+        savedItem.url = AWS.getGetSignedUrl(savedItem.url);
+        res.status(201).send(savedItem);
     });
 
 export const FeedRouter: Router = router;
