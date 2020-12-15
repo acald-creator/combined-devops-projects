@@ -7,7 +7,7 @@ import {
 } from 'sequelize-typescript';
 
   @Table
-export class FeedItem extends Model<FeedItem> {
+class FeedItem extends Model<FeedItem> {
     @Column
     public caption!: string;
 
@@ -21,4 +21,6 @@ export class FeedItem extends Model<FeedItem> {
     @Column
     @UpdatedAt
     public updatedAt: Date = new Date();
-}
+  }
+
+export { FeedItem as default };

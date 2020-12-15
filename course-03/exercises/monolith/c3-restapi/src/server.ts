@@ -1,8 +1,8 @@
 import express, { NextFunction, Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import { sequelize } from './sequelize';
-import { V0MODELS } from './controllers/v0/model.index';
-import { IndexRouter } from './controllers/v0/index.router';
+import sequelize from './sequelize';
+import V0MODELS from './controllers/v0/model.index';
+import IndexRouter from './controllers/v0/index.router';
 
 (async () => {
   /* Add the models and sync with Sequelize */

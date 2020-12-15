@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   dev: {
     username: process.env.POSTGRES_USERNAME || 'udagramacald',
     password: process.env.POSTGRES_PASSWORD || 'Password123456',
@@ -20,6 +20,8 @@ export const config = {
     dialect: 'postgres',
   },
   jwt: {
-    secret: process.env.JWT_SECRET!,
+    secret: process.env.JWT_SECRET! || 'secret',
   },
 };
+
+export { config as default };

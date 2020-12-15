@@ -8,7 +8,7 @@ import {
 } from 'sequelize-typescript';
 
   @Table
-export class User extends Model<User> {
+class User extends Model<User> {
     @PrimaryKey
     @Column
     public email!: string;
@@ -29,4 +29,6 @@ export class User extends Model<User> {
         email: this.email,
       };
     }
-}
+  }
+
+export { User as default };
