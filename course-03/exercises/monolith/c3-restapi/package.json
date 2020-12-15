@@ -6,6 +6,9 @@
   "repository": "https://github.com/acaldwell-pixel/aws-cloud-developer-projects.git",
   "author": "Antonette Caldwell",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev ./src/server.ts"
+  },
   "dependencies": {
     "@types/bcrypt": "^3.0.0",
     "@types/bluebird": "^3.5.33",
