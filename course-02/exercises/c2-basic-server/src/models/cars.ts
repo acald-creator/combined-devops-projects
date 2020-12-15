@@ -1,4 +1,10 @@
-import { Car } from "./src/interfaces/cars.interface";
+export interface Car {
+    make: string
+    type: string
+    model: string
+    cost: number
+    id: number
+}
 
 export const cars: Car[] = [
     { make: 'tesla', type: 'sedan', model: 'roadster', cost: 33, id: 0 },
