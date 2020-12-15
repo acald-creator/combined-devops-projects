@@ -1,0 +1,9 @@
+{
+  "name": "c3-restapi",
+  "version": "1.0.0",
+  "description": "Basic Express REST API image filtering app",
+  "main": "www/server.js",
+  "repository": "https://github.com/acaldwell-pixel/aws-cloud-developer-projects.git",
+  "author": "Antonette Caldwell",
+  "license": "MIT"
+}
