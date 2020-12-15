@@ -12,7 +12,7 @@ AWS.config.credentials = credentials;
 
 // Make sure it can recognize the S3 bucket that was created earlier
 export const s3 = new AWS.S3({
-  signatureVersion: "v4",
+  signatureVersion: 'v4',
   region: c.aws_region,
   params: {
     Bucket: c.aws_media_bucket,
@@ -24,7 +24,7 @@ export const s3 = new AWS.S3({
 export function getGetSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
 
-  const url = s3.getSignedUrl("getObject", {
+  const url = s3.getSignedUrl('getObject', {
     Bucket: c.aws_media_bucket,
     Key: key,
     Expires: signedUrlExpireSeconds,
@@ -36,7 +36,7 @@ export function getGetSignedUrl(key: string): string {
 export function getPutSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
 
-  const url = s3.getSignedUrl("putObject", {
+  const url = s3.getSignedUrl('putObject', {
     Bucket: c.aws_media_bucket,
     Key: key,
     Expires: signedUrlExpireSeconds,
