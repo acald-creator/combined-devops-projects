@@ -1,0 +1,7 @@
+{
+  "name": "c3-ui",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
