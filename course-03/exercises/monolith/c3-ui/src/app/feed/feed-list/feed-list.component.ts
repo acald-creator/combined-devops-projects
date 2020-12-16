@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { FeedItem } from '../models/feed-item.model';
+import { FeedProviderService } from '../services/feed.provider.service';
 
 @Component({
   selector: 'app-feed-list',
@@ -6,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feed-list.component.scss'],
 })
 export class FeedListComponent implements OnInit {
+  @Input() feedItems: FeedItem[];
+  subscriptions: Subscription[] = [];
 
-  constructor() { }
+  constructor(private feed: FeedProviderService) { }
 
-  ngOnInit() {}
+  async ngOnInit() {
+    this.subscriptions.push(
+      this.feed.currentFeed$.subscribe((items) => {
+        this.feedItems = items;
+      }));
 
+      await this.feed.getFeed();
+  }
+
+  ngOnDestroy(): void {
+    for (const subscription of this.subscriptions) {
+      subscription.unsubscribe();
+    }
+  }
 }
