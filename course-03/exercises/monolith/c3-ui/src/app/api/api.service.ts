@@ -7,11 +7,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json' })
-  }
+  };
 
   constructor(private http: HttpClient) { }
 
   handleError(error: Error){
-    alert(error.message)
+    alert(error.message);
   }
 }

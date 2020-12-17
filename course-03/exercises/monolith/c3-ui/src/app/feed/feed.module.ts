@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeedProviderService } from './services/feed.provider.service'
+import { FeedProviderService } from './services/feed.provider.service';
 import { FeedUploadComponent } from './feed-upload/feed-upload.component';
 import { FeedListComponent } from './feed-list/feed-list.component';
 import { FeedItemComponent } from './feed-item/feed-item.component';
 
-const entryComponents = [FeedUploadComponent]
-const components = [FeedListComponent, FeedItemComponent, FeedUploadComponent]
+const entryComponents = [FeedUploadComponent];
+const components = [FeedListComponent, FeedItemComponent, FeedUploadComponent];
 
 @NgModule({
   declarations: components,
@@ -14,7 +14,7 @@ const components = [FeedListComponent, FeedItemComponent, FeedUploadComponent]
     CommonModule
   ],
   exports: components,
-  entryComponents: entryComponents,
+  entryComponents,
   providers: [FeedProviderService]
 })
 export class FeedModule { }
