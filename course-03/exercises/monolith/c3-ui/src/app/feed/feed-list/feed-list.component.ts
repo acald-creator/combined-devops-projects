@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FeedItem } from '../models/feed-item.model';
 import { FeedProviderService } from '../services/feed.provider.service';
@@ -8,7 +8,7 @@ import { FeedProviderService } from '../services/feed.provider.service';
   templateUrl: './feed-list.component.html',
   styleUrls: ['./feed-list.component.scss'],
 })
-export class FeedListComponent implements OnInit {
+export class FeedListComponent implements OnInit, OnDestroy {
   @Input() feedItems: FeedItem[];
   subscriptions: Subscription[] = [];
 
@@ -20,7 +20,7 @@ export class FeedListComponent implements OnInit {
         this.feedItems = items;
       }));
 
-      await this.feed.getFeed();
+    await this.feed.getFeed();
   }
 
   ngOnDestroy(): void {
