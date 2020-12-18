@@ -1,3 +1,11 @@
-<p>
-  auth-menu-button works!
-</p>
+<ion-item-group *ngIf="!(auth.currentUser$ | async)">
+  <ion-button color="seconday" (click)="presentRegister()">Register</ion-button>
+  <ion-button (click)="presentLogin()" color="primary">Log In</ion-button>
+</ion-item-group>
+
+<ion-item-group *ngIf="auth.currentUser$ | async">
+  <ion-button color="secondary"
+    >{{ (auth.currentUser$ | async).email }}
+  </ion-button>
+  <ion-button (click)="logout()" color="primary">Log Out</ion-button>
+</ion-item-group>
