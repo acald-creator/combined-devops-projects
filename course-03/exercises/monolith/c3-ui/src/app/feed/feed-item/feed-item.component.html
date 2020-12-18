@@ -1,3 +1,6 @@
-<p>
-  feed-item works!
-</p>
+<ion-card class="photo-card" *ngIf="feedItem">
+  <ion-img [src]="feedItem.url"></ion-img>
+  <ion-card-content>
+    <p>{{feedItem.caption}}</p>
+  </ion-card-content>
+</ion-card>
