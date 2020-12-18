@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 const API_HOST = environment.apiHost;
@@ -45,6 +45,23 @@ export class ApiService {
       this.handleError(e);
       throw e;
     }
+  }
+
+  async upload(endpoint: string, file: File, payload: any): Promise<any> {
+    const signedUrl = (await this.get(`${endpoint}/signedUrl/${file.name}`)).url;
+
+    const headers = new HttpHeaders({'Content-Type': file.type });
+    const req = new HttpRequest('PUT', signedUrl, file, {
+      headers,
+      reportProgress: true
+    });
+    return new Promise(resolve => {
+      this.http.request(req).subscribe((resp) => {
+        if (resp && (resp as any).status && (resp as any).status === 200) {
+          resolve(this.post(endpoint, payload));
+        }
+      });
+    });
   }
 
   private extractData(res: HttpEvent<any>) {
