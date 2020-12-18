@@ -10,11 +10,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenubarComponent } from './menubar/menubar.component';
 import { ApiService } from './api/api.service';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, MenubarComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AuthModule],
   providers: [
     ApiService,
     StatusBar,
@@ -23,4 +24,4 @@ import { ApiService } from './api/api.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
