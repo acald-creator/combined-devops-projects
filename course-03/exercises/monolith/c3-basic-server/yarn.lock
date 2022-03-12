@@ -377,9 +377,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"c2-basic-server@workspace:.":
+"c3-basic-server@workspace:.":
   version: 0.0.0-use.local
-  resolution: "c2-basic-server@workspace:."
+  resolution: "c3-basic-server@workspace:."
   dependencies:
     "@types/body-parser": ^1.19.0
     "@types/chai": ^4.2.14
